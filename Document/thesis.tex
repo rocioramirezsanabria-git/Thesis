@@ -1,16 +1,16 @@
 \documentclass[11pt]{book}
 \usepackage{caption,graphicx}
 \usepackage{float}
-\usepackage{indentfirst} %Espaciado de primera línea de cada párrafo
-\usepackage{float}     %Márgenes
-\linespread{1.15}      %Separación de línea
-\parskip 10pt    
+\usepackage{indentfirst}
+\usepackage{float} 
+\parskip 5pt    
 \usepackage[margin=1in]{geometry}
 \setcounter{section}{0}
 \renewcommand{\thesection}{\arabic{section}}
 \usepackage{amssymb}
-\usepackage{flafter}
 \usepackage{enumitem}
+\usepackage{setspace}
+\linespread{1.0}
 \begin{document}
 \renewcommand{\labelitemi}{$\textendash$}
 \renewcommand{\labelitemii}{{\tiny$\blacksquare$}}
@@ -46,7 +46,6 @@ And there exist several benefits about implementing IPsec:
 \item Possibility of integrating it into a perimeter security device.
 \end{itemize}
 
-\break
 
 \section{Modes}
 IPsec operates in two possible modes, transport or tunnel which are going to be discussed in the following subsections.
@@ -54,7 +53,7 @@ IPsec operates in two possible modes, transport or tunnel which are going to be 
 When working with this mode the original IP packet is modified by inserting an additional header between the network and transport layer only protecting the information coming from the transport layer. 
 \begin{figure}[H]
 	\centering
-	\includegraphics [scale=0.5] {transport_encapsulation.png}
+	\includegraphics [scale=0.165] {transport_encapsulation.png}
 	\caption{IPsec in transport mode}
 \end{figure}
 As it can be seen, the segment of the transport layer is encapsulated with a header and a trailer, this resulting encapsulation will be the final IP packet data field where the source and destination IP addresses are those of the two nodes that want to communicate securely.\\
@@ -63,7 +62,7 @@ As it can be seen, the segment of the transport layer is encapsulated with a hea
 When working with this mode the original IP packet is encapsulated entirely in a new IP packer, where the new IP header will have as origin and destination addresses the ends of the tunnel. Therefore, the entire packet is protected unlike when working with the transport mode. 
 \begin{figure}[H]
 	\centering
-	\includegraphics [scale=0.5] {tunnel_encapsulation.png}
+	\includegraphics [scale=0.165] {tunnel_encapsulation.png}
 	\caption{IPsec in tunnel mode}
 \end{figure}
 In tunnel mode it is the original IP packet the one being encapsulated with an IPsec header and a trailer. A new IP header is added to the resulting encapsulation, where, as already said before, the source and destination IP addresses are those at the ends of the tunnel.
@@ -74,7 +73,7 @@ The AH security protocol provides authentication and integrity to the IP packets
 In order to protect the IP header and data against modifications, a MAC (Message Authentication Code) function is applied to the majority of the bytes of the IP datagram, except for the fields that could change such as TOS, Flags, Checksum and TTL fragments offset. The minimum requirements for this MAC function are HMAC-MD5-96 and HMAC-SHA-1-96.
 \begin{figure}[H]
 	\centering
-	\includegraphics [scale=0.6] {ah_fields.png}
+	\includegraphics [scale=0.175] {ah_fields.png}
 	\caption{AH fields}
 \end{figure}
 
@@ -88,15 +87,18 @@ The AH extension contains the following fields:
 \item \textbf{Extended Sequence Number (ESN):} this field is 8 bytes long and it is used to support high-speed IPsec implementations by at the same time prolonging a SA's lifetime. This ESN must be negotiated when SA is created by the SA management protocol. This works as an extension of the already existing 4 bytes sequence number field.
 \item \textbf{Integrity Check Value (ICV):} this field has a variable length and it contains the ICV, which will provide authentication and integrity checking. Its length must be an integral multiple of 32 bits for both IPv4 and IPv6. 
 \end{itemize}
+
+\break
+
 In the following figures we can see the AH encapsulation with the two possible modes:
 \begin{figure}[H]
 	\centering
-	\includegraphics [scale=0.6] {ah-transport.png}
+	\includegraphics [scale=0.17] {ah-transport.png}
 	\caption{AH Encapsulation in transport mode}
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\includegraphics [scale=0.6] {ah-tunnel.png}
+	\includegraphics [scale=0.17] {ah-tunnel.png}
 	\caption{AH Encapsulation in tunnel mode}
 \end{figure}
 
@@ -106,7 +108,7 @@ It guarantees that the content cannot be examined by third parties or, if possib
 It is important to note that ESP does not encrypt nor authenticate the IP header fields unless they are encapsulated by ESP using the tunnel mode. 
 \begin{figure}[H]
 	\centering
-	\includegraphics [scale=0.5] {esp_header.png}
+	\includegraphics [scale=0.165] {esp_header.png}
 	\caption{ESP fields}
 \end{figure}
 The ESP extension contains the following fields:
@@ -134,12 +136,12 @@ The ESP extension contains the following fields:
 In the following figures we can see the ESP encapsulation with the two possible modes:
 \begin{figure}[H]
 	\centering
-	\includegraphics [scale=0.6] {esp-transport.png}
+	\includegraphics [scale=0.175] {esp-transport.png}
 	\caption{ESP Encapsulation in transport mode}
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\includegraphics [scale=0.6] {esp-tunnel.png}
+	\includegraphics [scale=0.175] {esp-tunnel.png}
 	\caption{ESP Encapsulation in tunnel mode}
 \end{figure}
 
@@ -156,7 +158,7 @@ There are three parameters that defines an SA uniquely:
 The three values previously mentioned are included in the data sent and in the Security Association Database (SAD) as we can see in the figure below:
 \begin{figure}[H]
 	\centering
-	\includegraphics [scale=0.4] {sadb_table.png}
+	\includegraphics [scale=0.165] {sadb_table.png}
 	\caption{Security Association Database}
 \end{figure}
 A Security Association Database (SAD) a central repository that contains all the active SAs for both inbound and outbound processes. With each entry on the database the specific parameters for each SA are defined.
@@ -166,28 +168,15 @@ A Security Association Database (SAD) a central repository that contains all the
 \item\textbf{ ARW (Anti-Replay Window):} detects inbound replayed packet.
 \item \textbf{AH/ESP:} 
 	\begin{itemize}
-	\item AH Information:
-		\begin{enumerate}
-		\item Authentication algorithm
-		\item Keys
-		\item Key lifetime
-		\item Others
-		\end{enumerate}
-	\item ESP Information:
-		\begin{enumerate}
-		\item Encryption algorithm
-		\item Authentication algorithm
-		\item Keys
-		\item Key lifetime
-		\item Initialisation vectors
-		\item Others
-		\end{enumerate}
+	\item AH Information: Authentication algorithm, Keys, Key lifetime, others.
+	\item ESP Information:Encryption algorithm, Authentication algorithm, Keys, Key lifetime, Initialisation vectors, others.
 	\end{itemize}
 
 \item \textbf{LT (Lifetime):} specifies the lifetime for the SA.
 \item \textbf{Mode:} specifies the mode, which can be transport or tunnel.
 \item \textbf{MUT(Path MTU):} specifies the path MTU. 
 \end{itemize}
+
 
 \section{Key Management. Internet Key Exchange (IKE)}
 The IKE protocol is not a part of the IPsec specification, but it is integrated with it. As it was stated before in this document, it is the one in charge to create SAs, negotiate security policies, perform key exchange and authenticate the nodes.\\
@@ -207,23 +196,29 @@ It divides its activity into two phases:
 \item \textbf{PHASE 1:} Negotiation of the IKE SA to protect phase 2 and it has two possible modes: main and aggresive.
 \item \textbf{PHASE 2:} Negotiation of SA for a data exchange protocol, in our case IPsec in each flow.
 \end{itemize}
+
+\break
+
 In the following figures we can se the two phases implementing both modes for PHASE 1:
 \begin{figure}[H]
 	\centering
-	\includegraphics [scale=0.4] {main.png}
+	\includegraphics [scale=0.19] {main.png}
 	\caption{IKE: Phase 1 and Phase 2}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics [scale=0.4] {aggressive.png}
+	\includegraphics [scale=0.19] {aggressive.png}
 	\caption{IKE: Phase 1 (Aggressive Mode) and Phase 2}
 \end{figure}
 
+\break
+
 Finally in the following figure we can see the different algorithms used in order to establish a secure communication between two (or more) parties via IPsec implementation:
+
 \begin{figure}[H]
 	\centering
-	\includegraphics [scale=0.5] {summary.png}
+	\includegraphics [scale=0.175] {summary.png}
 	\caption{Algorithms}
 \end{figure}
 \section{Lightweight IPsec}

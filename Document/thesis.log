@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.3.25)  5 FEB 2020 18:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.3.25)  5 FEB 2020 19:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -114,11 +114,6 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/usr/local/texlive/2018/texmf-dist/tex/latex/base/flafter.sty
-Package: flafter 2018/01/08 v1.4c Standard LaTeX floats after reference (FMi)
-Applying: [2015/01/01] float order in 2-column on input line 49.
-Already applied: [0000/00/00] float order in 2-column on input line 151.
-)
 (/usr/local/texlive/2018/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip43
@@ -126,6 +121,9 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@toks=\toks19
 \enit@inbox=\box28
 \enitdp@description=\count94
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
 )
 (./thesis.aux)
 \openout1 = `thesis.aux'.
@@ -259,7 +257,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ] (./thesis.toc
-Underfull \vbox (badness 5592) has occurred while \output is active []
+Underfull \vbox (badness 2772) has occurred while \output is active []
 
  [3])
 \tf@toc=\write3
@@ -298,31 +296,29 @@ LaTeX Warning: Command \textendash invalid in math mode on input line 45.
 
 LaTeX Warning: Command \textendash invalid in math mode on input line 46.
 
-
-Underfull \vbox (badness 2726) has occurred while \output is active []
-
- [9]
-<transport_encapsulation.png, id=37, 573.14125pt x 201.75375pt>
+<transport_encapsulation.png, id=34, 1719.42375pt x 605.26125pt>
 File: transport_encapsulation.png Graphic file (type png)
 <use transport_encapsulation.png>
-Package pdftex.def Info: transport_encapsulation.png  used on input line 57.
-(pdftex.def)             Requested size: 286.56992pt x 100.87662pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--61
+Package pdftex.def Info: transport_encapsulation.png  used on input line 56.
+(pdftex.def)             Requested size: 283.69267pt x 99.86378pt.
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
 
  []
 
-<tunnel_encapsulation.png, id=39, 568.1225pt x 231.86626pt>
+<tunnel_encapsulation.png, id=39, 1704.3675pt x 695.59875pt>
 File: tunnel_encapsulation.png Graphic file (type png)
 <use tunnel_encapsulation.png>
-Package pdftex.def Info: tunnel_encapsulation.png  used on input line 66.
-(pdftex.def)             Requested size: 284.06055pt x 115.93283pt.
-[10 <./transport_encapsulation.png> <./tunnel_encapsulation.png>]
-<ah_fields.png, id=45, 663.47874pt x 232.87pt>
+Package pdftex.def Info: tunnel_encapsulation.png  used on input line 65.
+(pdftex.def)             Requested size: 281.2085pt x 114.76884pt.
+<ah_fields.png, id=40, 1990.43625pt x 695.59875pt>
 File: ah_fields.png Graphic file (type png)
 <use ah_fields.png>
-Package pdftex.def Info: ah_fields.png  used on input line 77.
-(pdftex.def)             Requested size: 398.0903pt x 139.72307pt.
+Package pdftex.def Info: ah_fields.png  used on input line 76.
+(pdftex.def)             Requested size: 348.33156pt x 121.7316pt.
+[10 <./transport_encapsulation.png> <./tunnel_encapsulation.png>]
+
+LaTeX Warning: Command \textendash invalid in math mode on input line 82.
 
 
 LaTeX Warning: Command \textendash invalid in math mode on input line 83.
@@ -333,7 +329,6 @@ LaTeX Warning: Command \textendash invalid in math mode on input line 84.
 
 LaTeX Warning: Command \textendash invalid in math mode on input line 85.
 
-[11 <./ah_fields.png>]
 
 LaTeX Warning: Command \textendash invalid in math mode on input line 86.
 
@@ -343,84 +338,96 @@ LaTeX Warning: Command \textendash invalid in math mode on input line 87.
 
 LaTeX Warning: Command \textendash invalid in math mode on input line 88.
 
-
-LaTeX Warning: Command \textendash invalid in math mode on input line 89.
-
-<ah-transport.png, id=50, 490.83376pt x 162.6075pt>
+[11 <./ah_fields.png>]
+<ah-transport.png, id=50, 1415.2875pt x 487.8225pt>
 File: ah-transport.png Graphic file (type png)
 <use ah-transport.png>
-Package pdftex.def Info: ah-transport.png  used on input line 94.
-(pdftex.def)             Requested size: 294.50252pt x 97.56525pt.
-<ah-tunnel.png, id=51, 611.28375pt x 162.6075pt>
+Package pdftex.def Info: ah-transport.png  used on input line 96.
+(pdftex.def)             Requested size: 240.59569pt x 82.92873pt.
+<ah-tunnel.png, id=51, 1776.6375pt x 487.8225pt>
 File: ah-tunnel.png Graphic file (type png)
 <use ah-tunnel.png>
-Package pdftex.def Info: ah-tunnel.png  used on input line 99.
-(pdftex.def)             Requested size: 366.77307pt x 97.56525pt.
-<esp_header.png, id=52, 834.11626pt x 352.31625pt>
+Package pdftex.def Info: ah-tunnel.png  used on input line 101.
+(pdftex.def)             Requested size: 302.02438pt x 82.92873pt.
+<esp_header.png, id=52, 2502.34875pt x 1056.94875pt>
 File: esp_header.png Graphic file (type png)
 <use esp_header.png>
-Package pdftex.def Info: esp_header.png  used on input line 109.
-(pdftex.def)             Requested size: 417.05711pt x 176.15768pt.
-[12 <./ah-transport.png> <./ah-tunnel.png>]
+Package pdftex.def Info: esp_header.png  used on input line 111.
+(pdftex.def)             Requested size: 412.86974pt x 174.389pt.
+ [12 <./ah-transport.png> <./ah-tunnel.png> <./esp_header.png>]
 
-LaTeX Warning: Command \textendash invalid in math mode on input line 114.
-
-
-LaTeX Warning: Command \textendash invalid in math mode on input line 120.
-
-[13 <./esp_header.png>]
-
-LaTeX Warning: Command \textendash invalid in math mode on input line 121.
+LaTeX Warning: Command \textendash invalid in math mode on input line 116.
 
 
-LaTeX Warning: Command \textendash invalid in math mode on input line 132.
+LaTeX Warning: Command \textendash invalid in math mode on input line 122.
 
-<esp-transport.png, id=64, 573.14125pt x 182.6825pt>
+
+LaTeX Warning: Command \textendash invalid in math mode on input line 123.
+
+
+LaTeX Warning: Command \textendash invalid in math mode on input line 134.
+
+<esp-transport.png, id=59, 1629.08624pt x 548.0475pt>
 File: esp-transport.png Graphic file (type png)
 <use esp-transport.png>
-Package pdftex.def Info: esp-transport.png  used on input line 137.
-(pdftex.def)             Requested size: 343.8874pt x 109.61034pt.
-<esp-tunnel.png, id=65, 653.44125pt x 182.6825pt>
+Package pdftex.def Info: esp-transport.png  used on input line 139.
+(pdftex.def)             Requested size: 285.09436pt x 95.90974pt.
+<esp-tunnel.png, id=60, 1869.98625pt x 548.0475pt>
 File: esp-tunnel.png Graphic file (type png)
 <use esp-tunnel.png>
-Package pdftex.def Info: esp-tunnel.png  used on input line 142.
-(pdftex.def)             Requested size: 392.06776pt x 109.61034pt.
-[14 <./esp-transport.png> <./esp-tunnel.png>]
-
-LaTeX Warning: Command \textendash invalid in math mode on input line 152.
-
-
-LaTeX Warning: Command \textendash invalid in math mode on input line 153.
-
+Package pdftex.def Info: esp-tunnel.png  used on input line 144.
+(pdftex.def)             Requested size: 327.2525pt x 95.90974pt.
+[13 <./esp-transport.png>]
 
 LaTeX Warning: Command \textendash invalid in math mode on input line 154.
 
-<sadb_table.png, id=71, 683.55376pt x 191.71625pt>
+
+LaTeX Warning: Command \textendash invalid in math mode on input line 155.
+
+
+LaTeX Warning: Command \textendash invalid in math mode on input line 156.
+
+<sadb_table.png, id=67, 2050.66125pt x 334.24875pt>
 File: sadb_table.png Graphic file (type png)
 <use sadb_table.png>
-Package pdftex.def Info: sadb_table.png  used on input line 159.
-(pdftex.def)             Requested size: 273.41666pt x 76.68513pt.
-
-LaTeX Warning: Command \textendash invalid in math mode on input line 164.
-
-
-LaTeX Warning: Command \textendash invalid in math mode on input line 165.
-
+Package pdftex.def Info: sadb_table.png  used on input line 161.
+(pdftex.def)             Requested size: 338.34451pt x 55.14865pt.
 
 LaTeX Warning: Command \textendash invalid in math mode on input line 166.
 
 
 LaTeX Warning: Command \textendash invalid in math mode on input line 167.
 
-[15 <./sadb_table.png>]
+
+LaTeX Warning: Command \textendash invalid in math mode on input line 168.
+
+
+LaTeX Warning: Command \textendash invalid in math mode on input line 169.
+
+[14 <./esp-tunnel.png> <./sadb_table.png>]
+
+LaTeX Warning: Command \textendash invalid in math mode on input line 175.
+
+
+LaTeX Warning: Command \textendash invalid in math mode on input line 176.
+
+
+LaTeX Warning: Command \textendash invalid in math mode on input line 177.
+
+
+LaTeX Warning: Command \textendash invalid in math mode on input line 185.
+
+
+LaTeX Warning: Command \textendash invalid in math mode on input line 186.
+
 
 LaTeX Warning: Command \textendash invalid in math mode on input line 187.
 
 
-LaTeX Warning: Command \textendash invalid in math mode on input line 188.
+LaTeX Warning: Command \textendash invalid in math mode on input line 191.
 
 
-LaTeX Warning: Command \textendash invalid in math mode on input line 189.
+LaTeX Warning: Command \textendash invalid in math mode on input line 192.
 
 
 LaTeX Warning: Command \textendash invalid in math mode on input line 196.
@@ -428,42 +435,31 @@ LaTeX Warning: Command \textendash invalid in math mode on input line 196.
 
 LaTeX Warning: Command \textendash invalid in math mode on input line 197.
 
-
-LaTeX Warning: Command \textendash invalid in math mode on input line 198.
-
-
-LaTeX Warning: Command \textendash invalid in math mode on input line 202.
-
-
-LaTeX Warning: Command \textendash invalid in math mode on input line 203.
-
-[16]
-
-LaTeX Warning: Command \textendash invalid in math mode on input line 207.
-
-
-LaTeX Warning: Command \textendash invalid in math mode on input line 208.
-
-<main.png, id=79, 553.06625pt x 432.61626pt>
+[15]
+<main.png, id=76, 1659.19875pt x 1297.84875pt>
 File: main.png Graphic file (type png)
 <use main.png>
-Package pdftex.def Info: main.png  used on input line 213.
-(pdftex.def)             Requested size: 221.22258pt x 173.04343pt.
-<aggressive.png, id=80, 614.295pt x 393.47pt>
+Package pdftex.def Info: main.png  used on input line 205.
+(pdftex.def)             Requested size: 315.25104pt x 246.59383pt.
+<aggressive.png, id=77, 1839.87375pt x 1177.39874pt>
 File: aggressive.png Graphic file (type png)
 <use aggressive.png>
-Package pdftex.def Info: aggressive.png  used on input line 219.
-(pdftex.def)             Requested size: 245.71364pt x 157.38521pt.
-<summary.png, id=81, 492.84125pt x 402.50375pt>
+Package pdftex.def Info: aggressive.png  used on input line 211.
+(pdftex.def)             Requested size: 349.57965pt x 223.70808pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16 <./main.png> <./aggressive.png>]
+<summary.png, id=83, 1478.52374pt x 1207.51125pt>
 File: summary.png Graphic file (type png)
 <use summary.png>
-Package pdftex.def Info: summary.png  used on input line 226.
-(pdftex.def)             Requested size: 246.42001pt x 201.25137pt.
-[17 <./main.png> <./aggressive.png>] [18 <./summary.png>]
-Chapter 4.
-[19
+Package pdftex.def Info: summary.png  used on input line 221.
+(pdftex.def)             Requested size: 258.74553pt x 211.31763pt.
+ [17 <./summary.png>] [18
 
-] [20
+]
+Chapter 4.
+[19] [20
 
 ]
 Chapter 5.
@@ -481,13 +477,13 @@ Chapter 7.
 Chapter 8.
 [27] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 3722 strings out of 492649
- 57979 string characters out of 6129622
- 122436 words of memory out of 5000000
- 7545 multiletter control sequences out of 15000+600000
+ 3744 strings out of 492649
+ 58327 string characters out of 6129622
+ 121757 words of memory out of 5000000
+ 7566 multiletter control sequences out of 15000+600000
  13562 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,7n,39p,397b,417s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,7n,39p,397b,325s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfo
@@ -496,7 +492,7 @@ s/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmr17.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmsl10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/sym
 bols/msam7.pfb>
-Output written on thesis.pdf (27 pages, 250521 bytes).
+Output written on thesis.pdf (27 pages, 657086 bytes).
 PDF statistics:
  144 PDF objects out of 1000 (max. 8388607)
  83 compressed objects within 1 object stream
