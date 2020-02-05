@@ -1,0 +1,40 @@
+\documentclass[11pt]{article}
+\begin{document}
+
+\title{Thesis: IPSec notes}
+\author{}
+\date{}
+\maketitle
+\section{Intro}
+Whar does IPSec provide?
+\begin{itemize}
+\item Access control
+\item Data origin authentication
+\item Integrity (connectionless oriented)
+\item Confidentiality (via encryption)
+\item Detection and rejection of replays (a form of partial sequence integrity)
+\end{itemize}
+These services are provided at the IP layer, offering protection in a standard fashion for all protocols that may be carried over IP (including IP itself).
+
+\section{Components of IPSec} (RFC 4301)
+\begin{enumerate}
+\item Security Associations (SA): An SA is a simplex "connection" that affords security services to the traffic carried by it.  Security services are afforded to an SA by the use of AH, or ESP, but not both.  If both AH and ESP protection are applied to a traffic stream, then two SAs must be created and coordinated to effect protection through iterated application of the security protocols.  To secure typical, bi-directional communication between two IPsec-enabled systems, a pair of SAs (one in each direction) is required.  IKE explicitly creates SA pairs in recognition of this common usage requirement.
+\item Security Protocols (SA)
+	\begin{itemize}
+	\item AH (Authentication Header)
+	\item ESP (Encapsulation Security Payload)
+	\end{itemize}
+\item Key Management Protocols
+	\begin{itemize}
+	\item IKE (Internet  Key  Exchange) 
+	\end{itemize}
+\item Authentication and Encryption Protocols
+\end{enumerate}
+
+\section{Modes of operation}
+\begin{itemize}
+\item Transport
+\item Tunnel
+\end{itemize}
+
+\end{document}

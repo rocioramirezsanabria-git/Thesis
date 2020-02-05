@@ -1,0 +1,31 @@
+\contentsline {chapter}{\numberline {1}Introduction}{5}
+\contentsline {chapter}{\numberline {2}IoT: Internet of Things}{7}
+\contentsline {section}{\numberline {1}Definition}{7}
+\contentsline {section}{\numberline {2}Applications}{7}
+\contentsline {subsection}{\numberline {2.1}Application: Telemedicine}{7}
+\contentsline {section}{\numberline {3}IoT Gateway}{7}
+\contentsline {chapter}{\numberline {3}IPsec: Internet Protocol Security}{9}
+\contentsline {section}{\numberline {1}Definition}{9}
+\contentsline {section}{\numberline {2}Modes}{10}
+\contentsline {subsection}{\numberline {2.1}Transport}{10}
+\contentsline {subsection}{\numberline {2.2}Tunnel}{10}
+\contentsline {section}{\numberline {3}Components of IPsec}{11}
+\contentsline {subsection}{\numberline {3.1}Security Protocols}{11}
+\contentsline {subsubsection}{AH: Authentication Header}{11}
+\contentsline {subsubsection}{ESP: Encapsulating Security Payload}{13}
+\contentsline {subsubsection}{ Security Associations}{15}
+\contentsline {section}{\numberline {4}Key Management. Internet Key Exchange (IKE)}{16}
+\contentsline {section}{\numberline {5}Lightweight IPsec}{18}
+\contentsline {chapter}{\numberline {4}CoAP: Constrained Application Protocol}{19}
+\contentsline {section}{\numberline {1}Definition}{19}
+\contentsline {subsection}{\numberline {1.1}Messaging Model}{19}
+\contentsline {subsection}{\numberline {1.2}Request/Response Model}{19}
+\contentsline {section}{\numberline {2}Message Format}{19}
+\contentsline {section}{\numberline {3}Message Transmission}{19}
+\contentsline {section}{\numberline {4}Securing CoAP}{19}
+\contentsline {subsection}{\numberline {4.1}DTLS: Datagram Transport Layer Security}{19}
+\contentsline {subsection}{\numberline {4.2}Key Management}{19}
+\contentsline {chapter}{\numberline {5}Test - Setup}{21}
+\contentsline {chapter}{\numberline {6}Test - Analysis}{23}
+\contentsline {chapter}{\numberline {7}Conclusion}{25}
+\contentsline {chapter}{\numberline {8}Discussion}{27}
