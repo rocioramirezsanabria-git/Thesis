@@ -2,7 +2,6 @@
 \usepackage{caption,graphicx}
 \usepackage{float}
 \usepackage{indentfirst}
-\usepackage{float} 
 \parskip 5pt    
 \usepackage[margin=1in]{geometry}
 \setcounter{section}{0}
@@ -10,10 +9,12 @@
 \usepackage{amssymb}
 \usepackage{enumitem}
 \usepackage{setspace}
+\usepackage{mathtools}
 \linespread{1.0}
 \begin{document}
 \renewcommand{\labelitemi}{$\textendash$}
 \renewcommand{\labelitemii}{{\tiny$\blacksquare$}}
+\thispagestyle{plain}
 
 \title{Bachelor's Thesis: Implementing Security in IoT Gateway in Legacy Devices for Telemedicine Applications. A comparison between Lightweight IPsec and CoAP}
 \author{Perla Rocío Ramírez Sanabria}
@@ -27,9 +28,64 @@
 \chapter{Introduction}
 \chapter{IoT: Internet of Things}
 \section{Definition}
+The definition of IoT, which stands for Internet of Things, can be expressed as the connection between the ``things" in the physical world and the virtual world, which is the Internet. When the word ``things" is mentioned, it refers to a variety of devices such as mobile phones, wearable devices, RFID among others. In other words, IoT can be understood as an extension of the internet through different devices and systems.\\
+It can be defined abstractly by the following statement: ``The IoT refers to the ever-growing network of physical objects that feature an IP address for the internet connectivity and the communication that occurs between these objects and other internet-enabled devices and systems." \\
+There are several components necessary for the Internet of Things to exist:
+\begin{itemize}
+\item \textbf{Sensors:} these are the devices capable of collecting the data processed by the IoT system. They basically detect the different event changes in the environment they are located in. The type of sensor will vary depending on the application, they can measure values such as temperature, moisture, light, acoustic \& noise, movement, water level, presence of chemical substances and among others. After these values are obtained they must be translated into electrical impulses so the system can be able to interpret the data.
+\item \textbf{Addressing and identification:} for an IoT system to properly function every operating device requires a unique identifier as well as a unique address, which will make it uniquely identified on the Internet. 
+\item\textbf{ Internet Protocol(IP):} it entails a key element because it is the main network protocol used. Currently there exist two versions of this protocol: IPv4 and IPv6. 
+\item \textbf{Actuators:} they are the ones in charge of acting according to the data measured by the sensors. These are devices that transform energy into motion and, like sensors, there are different types of motion patterns depending on the kind of energy received such as linear actuators, motors, relays and solenoids.
+\item \textbf{IoT gateway:} it is a physical device or software program that serves as a bridge between the data generating devices and the cloud. This component is essential in terms of translating the protocols functioning on the IoT devices into one standard protocol. Regarding the subject on this document, it also improves the security due to a bidirectional management of the data from the cloud to the devices preventing leaks. 
+\item \textbf{The cloud:} this is where all the data collected by all the IoT devices are stored and also this is where all the software can access the data for processing.
+\item \textbf{User interface:} component required in order to establish a connection between the devices and users. 
+\end{itemize}
+And different communication channels, which can also be called communication pattern:
+\begin{itemize}
+\item \textbf{Device-to-Device:} represents the way in which two o more devices connect and communicate directly between each other. Typically this is used with protocols such as Bluetooth, Z-Wave and Zigbee. 
+\begin{figure}[H]
+	\centering
+	\includegraphics [scale=0.165] {devicedevice.png}
+	\caption{Device-to-Device communication pattern representation}
+\end{figure}
+\item \textbf{Device-to-Cloud:} represents the way in which a device connects directly to the cloud, this can be achieved by wired Ethernet or Wi-Fi connections. 
+\begin{figure}[H]
+	\centering
+	\includegraphics [scale=0.165] {devicecloud.png}
+	\caption{Device-to-Cloud communication pattern representation}
+\end{figure}
+\item \textbf{Device-to-Gateway:} this pattern occurs before the device connects directly to the cloud. It is necessary to translate protocols and add an additional security layer.
+\begin{figure}[H]
+	\centering
+	\includegraphics [scale=0.165] {devicegateway.png}
+	\caption{Device-to-Gateway communication pattern representation}
+\end{figure}
+\item \textbf{Back-End Data Sharing:} it works as an extension of the Device-to-Cloud pattern. This enables access for users to later analyse data from different smart devices. 
+\begin{figure}[H]
+	\centering
+	\includegraphics [scale=0.165] {backendsharing.png}
+	\caption{Back-End Data Sharing communication pattern representation}
+\end{figure}
+\end{itemize}
+
 \section{Applications}
-\subsection{Application: Telemedicine}
-\section{IoT Gateway}
+IoT covers a wide fan of applications in different sectors thanks to its potential. Nowadays IoT is implemented in a few sectors, but in the future is expected to be implemented in almost every aspect in the citizens life such as personal use, smart homes, cities and hospitals. Some applications are going to be explained briefly below, but the main focus is on the Telemedicine application is going to be explained in detail in the following subsection due to its importance for this thesis. 
+\subsubsection{Transportation}
+IoT can be extended in terms regarding of the vehicle itself and the driver as well as in different aspects of the transportation system. The different applications in this sector are the following among others:
+\begin{itemize}
+\item Inter and intra vehicular communications
+\item Traffic control.
+\item Smart parking.
+\item Collision detection.
+\item Vehicle control.
+\end{itemize}
+\subsubsection{Infrastructure Management}
+IoT can be utilised in monitoring and control operation of infrastructures such as in bridges and railways. IoT can detect any events or changes that may supposed a risk for the users in said infrastructures. Along with this application, there is also a possibility of using IoT to effectively plan repair and maintenance operations, by organizing duties between different service providers and users of these facilities. Lastly, IoT can be used to control bridges in order to grant access to ships. 
+\subsubsection{Home Automation}
+This entails what nowadays is called a ``Smart Home". This includes the automation of several devices such as lightning, heating, air conditioning and security systems. Electrical household appliance are also included here such as fridges, washing machines, dryers or ovens. 
+\subsubsection{Media, Entertainment.}
+It is known as Multimedia-IoT and it refers to the different technologies used in order to transmit media information. This can go from certain streaming services to surveillance material. 
+\subsection{Application: Telemedicine/Medical and Health Care}
 \chapter{IPsec: Internet Protocol Security}
 \section{Definition}
 IPsec results from the abbreviation of Internet Protocol Security. This protocol provides a framework of open standards to ensure secure communications over IPv4 or IPv6, authenticating and encrypting each packet, thus ensuring communications at the network level and at all higher levels. Being optional for IPv4 and mandatory for IPv6.\\
@@ -224,13 +280,144 @@ Finally in the following figure we can see the different algorithms used in orde
 \section{Lightweight IPsec}
 \chapter{CoAP: Constrained Application Protocol}
 \section{Definition}
+According to the document RFC 7252 where this protocol is defined: ``The Constrained Application Protocol (CoAP) is a specialised web transfer protocol for use with constrained nodes and constrained (e.g., low-power, lossy) networks." The main function of this protocol is to enable easy, limited devices to access the IoT in constrained networks which usually present low availability and bandwidth. \\
+CoAP is an application layer protocol designed similarly to the Hypertext Transfer Protocol (HTTP), this ensures compatibility in terms of the REST model with the latter protocol even using the same methods (GET, POST, PUT and DELETE), URIs, MIME types, etc. The main reason behind this is for an easy translation between both CoAP and HTTP as well as to a simple integration in the web. The main differences with HTTP are located within the security framework. \\
+\begin{figure}[H]
+	\centering
+	\includegraphics [scale=0.175] {coapstack.png}
+	\includegraphics [scale=0.175] {httpstack.png}
+	\caption{Comparison between Secured-DTLS CoAP Stack and HTTP Stack}
+\end{figure}
+CoAP presents a series of features, which are the following:
+\begin{itemize}
+\item Constrained web protocol fulfilling M2M requirements.
+\item Security binding to DTLS (Datagram Transport Layer Security).
+\item Asynchronous message exchanges.
+\item Low header overhead and parsing complexity.
+\item URI and Content-Type support. 
+\item Simple proxy and caching capabilities.
+\item A stateless HTTP mapping, allowing proxies to be built providing access to CoAP resources via HTTP in a uniform way or for HTTP simple interfaces to be realised alternatively over CoAP.
+\end{itemize}
+\section{CoAP Structure Model}
 \subsection{Messaging Model}
+The CoAP message exchange is carried out on UPD endpoints and there are four possible messages which are: \begin{itemize}
+\item CON (Confirmable)
+\item NON (Non-confirmable)
+\item ACK (Acknowledgemente)
+\item RST (Reset)
+As well as different types of transport:
+\begin{itemize}
+\item \textbf{Reliable message transport}\\
+Message transport acquires reliability by marking the message sent by the client as Confirmable. The client sends the messages periodically until it receives an Acknowledgement message (ACK) message with the same Message ID from the server. 
+\begin{figure}[H]
+	\centering
+	\includegraphics [scale=0.175] {messagingmodel.png}
+	\caption{Reliable Message Transmission}
+\end{figure}
+If the recipient is not able to process a Confirmable (CON) message, it replies with a Reset message (RST) instead of an Acknowledgement message (ACK).
+\item \textbf{Unreliable message transport}\\
+There is also a possibility to obtain an unreliable transmission by marking the message sent by the client as Non-confirmable. In this case, the client does not wait for an Acknowledgement message (ACK) from the server. However, Message ID is included for detection in case duplication occurs. 
+\begin{figure}[H]
+	\centering
+	\includegraphics [scale=0.175] {unmessaging.png}
+	\caption{Reliable Message Transmission}
+\end{figure}
+If the recipient is not able to process a Non-confirmable message, it may reply with a Reset message (RST).
+\end{itemize}
+\end{itemize}
+\subsection{Message Format}
+\begin{figure}[H]
+	\centering
+	\includegraphics [scale=0.175] {messageformat.png}
+	\caption{Message Format}
+\end{figure}
+The fields in a CoAP message are:
+\begin{itemize}
+\item \textbf{Version (Ver):} this field, coded on 2 bits (unsigned), indicates the CoAP version. Implementations of this specification MUST set this field to 1 (01 binary).  Other values are reserved for future versions. 
+\item \textbf{Type (T):} this field, coded on 2 bits (unsigned), indicates the message type Confirmable (0), Non-confirmable (1), Acknowledgement (2), or Reset (3).
+\item \textbf{Token Length (TKL):} this field, coded on 4 bits (unsigned), indicates the length of the variable-length Token field (0-8 bytes). 
+\item \textbf{Code:} this field coded on 8 bits (unsigned) is split in two parts as its syntax is c.dd:
+	\begin{itemize}
+	\item \textbf{c:} Class. 3 bits. Digit from 0 to 7
+	\item \textbf{dd:} Details. 5 bits. Digit from 0 to 31
+	\end{itemize}
+The class can indicate a request (0), a success response (2), a client error response (4), or a server error response (5)
+\item \textbf{Message ID:} this field, coded on 16-bit unsigned integer in network byte order, is used to detect message duplication and to match messages of type Acknowledgement/Reset to messages of type Confirmable/Non-confirmable.
+\item \textbf{Token:}  this field, which may be 0 to 8 bytes, is used to correlate requests and responses.
+\item \textbf{Options:} Both requests and responses may include a list of one or more options. These are some possible options: Content-Format, ETag, Location-Path, Proxy-Uri, If-Match, Uri-Query.
+\end{itemize}
 \subsection{Request/Response Model}
-\section{Message Format}
-\section{Message Transmission}
+In the CoAP messages exchanged a Method Code or Response Code are going to be included mandatorily in a request and response respectively. Optionally, information such as URI and payload media type are carried as options. \\
+A request can be carried out with a Confirmable (CON) or Non-confirmable (NON) message. When the message used by the client is Confirmable (CON) there exist two ways of obtaining a response:
+\begin{itemize}
+\item \textbf{Piggybacked:} when the response is received immediately.
+\begin{figure}[H]
+	\centering
+	\includegraphics [scale=0.175] {request-response.png}
+	\caption{Two GET Requests with Piggybacked Responses. Success and Failure.}
+\end{figure}
+\item \textbf{Separate Response:} this occurs when the server is not able to respond immediately, the first response is going to be an empty Acknowledgement message (ACK) so the client does not retransmit the request again. Once the response is ready, the server sends the information as a Confirmable (CON) message.
+\begin{figure}[H]
+	\centering
+	\includegraphics [scale=0.175] {separatereqres.png}
+	\caption{A GET Request with a Separate Response}
+\end{figure}
+\end{itemize}
+In case the message used in the request was a Non-confirmable (NON), the response is also a Non-confirmable (NON) message, although the server may instead send a Confirmable (CON) message.
+\begin{figure}[H]
+	\centering
+	\includegraphics [scale=0.175] {nonreqres.png}
+	\caption{A Request and a Response Carried in Non-confirmable Messages}
+\end{figure}
+
+\subsubsection{URI scheme}
+CoAP uses the "coap" and "coaps" URI schemes for identifying CoAP resources and providing a means of locating the resource. 
+\begin{center}
+\texttt{coap-URI = "coap:" "//" host [ ":" port ] path-abempty [ "?" query ]}\\
+\texttt{coaps-URI = "coaps:" "//" host [ ":" port ] path-abempty
+               [ "?" query ]}
+\end{center}
+\begin{itemize}
+\item \textbf{host:} it can be an IP address or a registered depending on the host and it is necessary to identify said host. 
+\item \textbf{port:} indicates the UDP port at which the CoAP server is located.  If it is empty or not given, then the default port 5683 is assumed.
+\item \textbf{path:} identifies a resource within the scope of the host and port. It consists of a sequence of path segments separated by a slash character (U+002F SOLIDUS "/").
+\item \textbf{query:} serves to further parameterise the resource.  It consists of a sequence of arguments separated by an ampersand character (U+0026 AMPERSAND "\&").  An argument is often in the form of a ``key=value" pair.
+\end{itemize}
+
+\subsubsection{Response codes}
+\begin{center}
+\begin{tabular}{ |p{3cm}|p{6cm}|  }
+ \hline
+ \textbf{Code} & \textbf{Description} \\
+ \hline
+ 65 & 2.01 Created \\
+ 66 & 2.02  Deleted\\
+ 67 & 2.03 Valid\\
+ 68 & 2.04 Changed\\
+ 69 & 2.05  Content\\
+ 128 & 4.00  Bad Request\\
+ 129 & 4.01 Unauthorised\\
+ 130 & 4.02 Bad Option\\
+ 131 & 4.03 Forbidden\\
+ 132 & 4.04 Not Found\\
+ 133 & 4.05 Method Not Allowed\\
+ 134 & 4.06 Not Acceptable\\
+ 140 & 4.12 Precondition Failed\\
+ 141 & 4.13 Request Entity Too Large\\
+ 143 & 4.15 Unsupported Content-Format\\
+ 160 & 5.00 Internal Server Error\\
+ 161 & 5.01 Not Implemented\\
+ 162 & 5.02 Bad Gateway\\
+ 163 & 5.03 Service Unavailable\\
+ 164 & 5.04 Gateway Timeout\\
+ 165 & Proxying Not Supported\\
+\hline
+\end{tabular}
+\caption{Table to test captions and labels}
+\label{table:1}
+\end{center}
 \section{Securing CoAP}
 \subsection{DTLS: Datagram Transport Layer Security}
-\subsection{Key Management}
 \chapter{Test - Setup}
 \chapter{Test - Analysis}
 \chapter{Conclusion}
